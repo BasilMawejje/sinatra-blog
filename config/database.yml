@@ -1,0 +1,14 @@
+default: &default
+  adapter: mysql2
+  host: 127.0.0.1
+  pool: 2
+  username: <%= ENV['SINATRA-BLOG_DATABASE_USERNAME']  %>
+  password: <%= ENV['SINATRA-BLOG_DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: turing
+
+test:
+  <<: *default
+  database: sinatra-blog
