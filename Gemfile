@@ -5,6 +5,7 @@ gem 'sinatra-activerecord'
 gem 'mysql2'
 gem 'rake'
 gem 'sinatra-contrib'
+gem 'aasm'
 
 group :test do
   gem 'rspec'

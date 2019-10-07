@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_10_07_075730) do
     t.bigint "category_id"
     t.string "title"
     t.string "post"
+    t.string "aasm_state"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["category_id"], name: "index_articles_on_category_id"

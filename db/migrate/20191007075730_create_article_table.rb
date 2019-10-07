@@ -4,6 +4,7 @@ class CreateArticleTable < ActiveRecord::Migration[6.0]
       t.belongs_to :category
       t.string :title
       t.string :post
+      t.string :aasm_state
       t.datetime :created_at
       t.datetime :updated_at
     end
