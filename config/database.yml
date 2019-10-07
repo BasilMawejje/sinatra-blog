@@ -1,14 +1,20 @@
 default: &default
   adapter: mysql2
-  host: 127.0.0.1
-  pool: 2
-  username: <%= ENV['SINATRA-BLOG_DATABASE_USERNAME']  %>
-  password: <%= ENV['SINATRA-BLOG_DATABASE_PASSWORD'] %>
+  encoding: utf8
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  username: root
+  password: ''
 
 development:
   <<: *default
-  database: turing
+  database: sinatra-blog_development
 
 test:
   <<: *default
-  database: sinatra-blog
+  database: sinatra-blog_test
+
+production:
+  <<: *default
+  database: sinatra-blog_production
+  username: sinatra-blog
+  password: ''
