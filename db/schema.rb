@@ -13,10 +13,12 @@
 ActiveRecord::Schema.define(version: 2019_10_07_075730) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_id"
     t.string "title"
     t.string "post"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

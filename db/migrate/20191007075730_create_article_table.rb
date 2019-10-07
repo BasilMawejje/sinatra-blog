@@ -1,6 +1,7 @@
 class CreateArticleTable < ActiveRecord::Migration[6.0]
   def change
     create_table :articles do |t|
+      t.belongs_to :category
       t.string :title
       t.string :post
       t.datetime :created_at
