@@ -8,6 +8,7 @@ gem 'sinatra-contrib'
 
 group :test do
   gem 'rspec'
+  gem 'shoulda-matchers'
   gem 'rack-test'
   gem 'capybara'
   gem 'database_cleaner'
