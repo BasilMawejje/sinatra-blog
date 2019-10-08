@@ -4,6 +4,7 @@ require './app/api/v1/models/category.rb'
 require 'spec_helper.rb'
 require 'shoulda-matchers'
 require_relative '../factories/article.rb'
+require_relative '../factories/category.rb'
 require 'factory_bot'
 
 RSpec.describe Article, type: :model do
@@ -26,7 +27,8 @@ RSpec.describe Article, type: :model do
 
   describe 'Publish/Unpublish an article' do
     context 'returns an unpublished article' do
-      let(:article) {create(:article)}
+      let(:category) {build(:category)}
+      let(:article) {build(:article, category_id: category.id)}
 
       it "should be unpublished on creation" do
         expect(article.aasm_state).to eq 'unpublished'
