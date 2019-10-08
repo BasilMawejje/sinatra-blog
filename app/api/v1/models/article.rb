@@ -21,12 +21,4 @@ class Article < ActiveRecord::Base
       transitions from: :published, to: :unpublished
     end
   end
-
-  def publish
-
-  end
-
-  def unpublish
-
-  end
 end

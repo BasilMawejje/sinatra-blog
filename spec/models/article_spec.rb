@@ -24,11 +24,22 @@ RSpec.describe Article, type: :model do
     it { should belong_to(:category) }
   end
 
-  describe 'Publish' do
-    FactoryBot.create(:article)
-    context 'has unpublished status on creation' do
-      let!(:article) {create(:article)}
+  describe 'Publish/Unpublish an article' do
+    context 'returns an unpublished article' do
+      let(:article) {create(:article)}
+
       it "should be unpublished on creation" do
+        expect(article.aasm_state).to eq 'unpublished'
+      end
+
+      it "should publish an article" do
+        article.publish!
+        expect(article.aasm_state).to eq 'published'
+      end
+
+      it "should unpublish an article" do
+        article.publish!
+        article.unpublish!
         expect(article.aasm_state).to eq 'unpublished'
       end
     end
