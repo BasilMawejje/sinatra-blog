@@ -10,6 +10,7 @@ gem 'aasm'
 group :test do
   gem 'rspec'
   gem 'shoulda-matchers'
+  gem 'factory_bot'
   gem 'rack-test'
   gem 'capybara'
   gem 'database_cleaner'
