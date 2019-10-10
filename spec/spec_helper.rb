@@ -1,7 +1,6 @@
 require 'shoulda-matchers'
 require 'rack/test'
 require 'rspec'
-require './app.rb'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
