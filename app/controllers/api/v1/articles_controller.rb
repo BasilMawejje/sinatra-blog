@@ -1,15 +1,17 @@
 require 'sinatra/base'
+require 'sinatra/json'
 require 'sinatra/activerecord'
 require './app/models/article.rb'
+require './app/serializers/article_serializer.rb'
 
 class ArticlesController < ApplicationController
   get '/articles' do
-    articles = Article.all
-    articles.to_json({:only => [:id, :title, :post, :category_id, :aasm_state]})
+    articles = Article.all.map{ |article| ArticleSerializer.new(article).as_json }
+    json articles
   end
 
   get '/articles/:id' do
-    article = Article.find(params[:id])
-    article.to_json({:only => [:id, :title, :post, :category_id, :aasm_state]})
+    article = ArticleSerializer.new(Article.find(params[:id])).as_json
+    json article
   end
 end
