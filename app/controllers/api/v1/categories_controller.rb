@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require './app/api/v1/models/category.rb'
+require './app/models/category.rb'
 
 class CategoriesController < ApplicationController
   get '/categories' do

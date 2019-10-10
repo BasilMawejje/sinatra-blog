@@ -1,6 +1,6 @@
 require 'sinatra/activerecord'
-require './app/api/v1/models/article.rb'
-require './app/api/v1/models/category.rb'
+require './app/models/article.rb'
+require './app/models/category.rb'
 require 'spec_helper.rb'
 require 'shoulda-matchers'
 

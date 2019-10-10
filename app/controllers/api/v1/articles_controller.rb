@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/activerecord'
-require './app/api/v1/models/article.rb'
+require './app/models/article.rb'
 
 class ArticlesController < ApplicationController
   get '/articles' do

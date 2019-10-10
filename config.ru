@@ -1,4 +1,4 @@
-Dir['./app/api/v1/controllers/*.rb'].each { |file|
+Dir['./app/controllers/api/**/*.rb'].each { |file|
   require file
 }
 
