@@ -20,6 +20,7 @@ RSpec.describe CategoriesController, type: :request do
 
         expect(last_response).to be_ok
         expect(last_response.status).to eq 200
+        expect(last_request.path_info).to eq '/categories'
       end
     end
   end
