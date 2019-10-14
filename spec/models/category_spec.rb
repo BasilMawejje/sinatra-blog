@@ -1,7 +1,7 @@
 require 'sinatra/activerecord'
-require './app/models/article.rb'
-require './app/models/category.rb'
-require 'spec_helper.rb'
+require './app/models/article'
+require './app/models/category'
+require 'spec_helper'
 require 'shoulda-matchers'
 
 RSpec.describe Category, type: :model do

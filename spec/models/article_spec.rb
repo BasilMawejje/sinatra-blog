@@ -1,10 +1,10 @@
 require 'sinatra/activerecord'
-require './app/models/article.rb'
-require './app/models/category.rb'
-require 'spec_helper.rb'
+require './app/models/article'
+require './app/models/category'
+require 'spec_helper'
 require 'shoulda-matchers'
-require_relative '../factories/article.rb'
-require_relative '../factories/category.rb'
+require_relative '../factories/article'
+require_relative '../factories/category'
 require 'factory_bot'
 
 RSpec.describe Article, type: :model do

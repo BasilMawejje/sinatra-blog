@@ -1,4 +1,4 @@
-require_relative '../support/factory_bot.rb'
+require_relative '../support/factory_bot'
 
 FactoryBot.define do
   factory :category do
