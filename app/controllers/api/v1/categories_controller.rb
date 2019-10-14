@@ -1,8 +1,9 @@
 require 'sinatra/base'
 require 'sinatra/json'
 require 'sinatra/activerecord'
-require './app/models/category.rb'
-require './app/serializers/category_serializer.rb'
+require './app/models/category'
+require './app/serializers/category_serializer'
+require './app/controllers/api/v1/application_controller'
 
 class CategoriesController < ApplicationController
   get '/categories' do

@@ -1,8 +1,9 @@
 require 'sinatra/base'
 require 'sinatra/json'
 require 'sinatra/activerecord'
-require './app/models/article.rb'
-require './app/serializers/article_serializer.rb'
+require './app/models/article'
+require './app/serializers/article_serializer'
+require './app/controllers/api/v1/application_controller'
 
 class ArticlesController < ApplicationController
   get '/articles' do
