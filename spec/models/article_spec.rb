@@ -28,21 +28,21 @@ RSpec.describe Article, type: :model do
   describe 'Publish/Unpublish an article' do
     context 'returns an unpublished article' do
       let(:category) {build(:category)}
-      let(:article) {build(:article, category_id: category.id)}
+      let(:article) {build(:article, category_id: 1)}
 
       it "should be unpublished on creation" do
-        expect(article.aasm_state).to eq 'unpublished'
+        expect(article).to have_state(:unpublished)
       end
 
       it "should publish an article" do
-        article.publish!
-        expect(article.aasm_state).to eq 'published'
+        expect(article).to transition_from(:unpublished).to(:published).on_event(:publish)
+        expect(article).to have_state(:published)
+        expect(article).not_to have_state(:unpublished)
       end
 
       it "should unpublish an article" do
-        article.publish!
-        article.unpublish!
-        expect(article.aasm_state).to eq 'unpublished'
+        expect(article).to transition_from(:published).to(:unpublished).on_event(:unpublish)
+        expect(article).to have_state(:unpublished)
       end
     end
   end

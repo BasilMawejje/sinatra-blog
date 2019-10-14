@@ -1,6 +1,7 @@
 require 'shoulda-matchers'
 require 'rack/test'
 require 'rspec'
+require 'aasm/rspec'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
